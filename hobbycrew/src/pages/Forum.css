@@ -1,0 +1,333 @@
+/* 전체 게시판 컨테이너 */
+.forum-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  height: 100%;
+}
+
+/* 모바일 화면 */
+.forum-form {
+  background-color: white;
+  padding: 10px;
+  width: 100%;
+  height: 100%; /* 화면 높이 전체 사용 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.forum-form .fontLogo {
+  font-family: "Cafe24Shiningstar";
+  color: #143be8;
+  text-align: center;
+  font-size: 28px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.forum-form .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+}
+
+.forum-form .post-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.forum-form .post-button:hover {
+  color: #143be8;
+}
+
+.forum-form .post-button:active {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.forum-form .post-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.forum-form .post-button:hover .post-icon {
+  transform: translateX(5px);
+}
+
+/* 검색 창 */
+.forum-form .search-bar {
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin: 10px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.forum-form .search-icon {
+  font-size: 20px;
+  color: #666;
+  margin-right: 8px;
+}
+.forum-form .search-button{
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.forum-form .search-input {
+  border: none;
+  flex: 1;
+  background: transparent;
+  font-size: 14px;
+  outline: none;
+}
+
+.forum-form .search-input::placeholder {
+  color: #aaa;
+}
+
+.forum-form .dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: auto;  /* 또는, .search-bar의 width만큼 설정 */
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 4px;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* 스크롤바 숨기기 옵션 */
+.forum-form .dropdown::-webkit-scrollbar {
+  display: block;
+}
+
+
+.forum-form .dropdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.forum-form .dropdown-item:hover {
+  background: #eaeaea;
+}
+
+.forum-form .dropdown-header {
+  padding: 10px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.forum-form .recent-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+
+.forum-form .recent-search-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  cursor: pointer;
+}
+.forum-form .recent-search-item:hover {
+  color: #143be8;
+}
+
+.recent-search-item span {
+  flex-grow: 1;
+}
+
+.forum-form .delete-search {
+  background: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.forum-form .delete-search:hover {
+  color: #333;
+}
+
+
+/* 추천 크루 */
+.forum-form .crew-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 8px;
+  padding: 8px;
+}
+
+/* 스크롤바 숨기기 옵션 */
+.forum-form .crew-list::-webkit-scrollbar {
+  display: none;
+}
+
+.forum-form .crew-card {
+  flex-shrink: 0;
+  width: 100px;
+  height: 140px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 이미지가 없을 경우 기본 아이콘 숨기기 */
+.forum-form .crew-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.forum-form .crew-card .no-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  display: none; /* 기본 이미지 숨기기 */
+}
+
+/* 텍스트 숨기기 */
+.forum-form .crew-name,
+.forum-form .popular-card .crew-name {
+  display: none;
+}
+
+/* 현재 인기 크루 */
+.forum-form .popular-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* 스크롤바 숨기기 옵션 */
+.forum-form .popular-list::-webkit-scrollbar {
+  display: none;
+}
+
+.forum-form .popular-card {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  height: 150px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.forum-form .popular-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.forum-form .popular-card .no-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  display: none;
+}
+
+.forum-form .popular-card:hover {
+  transform: translateY(-4px);
+}
+
+/* 하단 네비게이션 */
+.menu-bar-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .forum-form .fontLogo {
+    font-size: 24px;
+  }
+
+  .forum-form .post-button {
+    font-size: 12px;
+  }
+
+  .forum-form .crew-card {
+    width: 90px;
+    height: 120px;
+  }
+
+  .forum-form .popular-list {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .forum-form .search-bar {
+    max-width: 100%;
+  }
+
+  .forum-form .dropdown {
+    max-width: 100%;
+    max-height: 200px;
+  }
+}
+

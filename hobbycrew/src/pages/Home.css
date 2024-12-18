@@ -1,0 +1,193 @@
+/* 전체 홈 컨테이너 */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden; /* 가로 드래그 방지 */
+  margin: 0;
+  background-color: #f0f2f5;
+}
+
+/* 로고 글씨체 적용 */
+@font-face {
+  font-family: "Cafe24Shiningstar";
+  src: url(../font/Cafe24Shiningstar-v2.0.ttf);
+}
+
+/* 홈 페이지 폼 */
+.home-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 50px;
+}
+
+.home-form .header {
+  display: flex;
+  justify-content: space-between; /* 로고 왼쪽, 버튼 오른쪽 */
+  align-items: center;
+  padding: 8px 15px;
+  background-color: white;
+  margin-top: -10px;
+}
+
+.home-form h1 {
+  font-size: 36px;
+  color: #143be8;
+  margin: 0;
+  font-family: "Cafe24Shiningstar";
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.home-form h2 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.home-form h3 {
+  text-align: left;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.home-form .button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.home-form .auth-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.home-form .auth-button:hover {
+  background-color: #ededed;
+  border-radius: 12px;
+}
+
+.home-form .form-group {
+  margin-bottom: 15px;
+}
+
+/* 오늘의 운동 스타일 */
+.home-form .today-quizs {
+  background: rgb(255, 255, 255);
+  border-color: #838383;
+  padding: 80px;
+  border-radius: 12px;
+  margin-top: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home-form .quiz-content {
+  display: flex;
+  justify-content: center;
+}
+
+.home-form .quiz-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+.home-form .quiz-play{
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 12px;
+  padding: 10px;
+  border-style:inherit;
+  border-color: rgb(169, 169, 169);
+}
+
+.home-form .quiz-play:hover{
+  background-color: #143be8;
+  color: white;
+}
+
+/* 크루 리스트 스타일 */
+.home-form .crew-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* 스와이프 시 정렬 */
+  gap: 10px;
+  padding: 10px;
+  margin-top: -15px;
+}
+
+.home-form .crew-card {
+  width: 109px;
+  height: 155px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: center; /* 각 카드가 화면에 맞춰 정렬되도록 */
+  flex-shrink: 0; /* 크기 고정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 스크롤바 숨기기 옵션 */
+.home-form .crew-list::-webkit-scrollbar {
+  display: none;
+}
+
+.home-form .crew-list {
+  -ms-overflow-style: none; /* IE */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* 관심사 리스트 스타일 */
+.home-form .interest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 300px; /* 최대 높이 제한 */
+  overflow-y: auto; /* 수직 스크롤 가능 */
+  margin-bottom: 25px;
+}
+
+/* 스크롤바 숨기기 */
+.home-form .interest-list::-webkit-scrollbar {
+  display: none;
+}
+.home-form .interest-list {
+  scrollbar-width: none; /* Firefox */
+}
+
+
+.home-form .interest-card {
+  height: 40px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 하단 네비게이션 스타일 */
+.menu-bar-footer {
+  width: 100%; /* 전체 너비 */
+  bottom: 0; /* 화면 하단에 위치 */
+  display: flex;
+}
+
+/* 모바일 화면에서 스크롤해도 고정 유지 */
+@media (max-width: 768px) {
+  .menu-bar-footer {
+    position: fixed;
+  }
+}

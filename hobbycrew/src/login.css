@@ -1,0 +1,156 @@
+/* Login.css */
+
+/* 전체 로그인 컨테이너 */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+  }
+
+  /* 로고 글씨체 적용*/
+  @font-face {
+    font-family: "Cafe24Shiningstar";
+    src: url(./font/Cafe24Shiningstar-v2.0.ttf);
+  }
+
+  .fontLogo
+  {
+    text-align: center;
+    font-family: "Cafe24Shiningstar";
+  }
+
+  
+  /* 모바일 화면용 폼 */
+  .login-form-mobile {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-form-mobile h1{
+    font-size: 50px;
+    color: #143be8;
+  }
+  
+  .login-form-mobile h2 {
+    text-align: center;
+  }
+  .login-form-mobile h3{
+    text-align: center;
+    font-size: 15px;
+    margin-top: -10px;
+    margin-bottom: 50px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  input:focus {
+    border-color: #143be8;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #143be8;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 6px;
+    margin-bottom: 8px;
+  }
+  
+  .login-button:hover {
+    background-color: #0b2286;
+  }
+
+
+
+  /* PC 화면용 폼 */
+  .login-form-pc {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-form-pc h1{
+    font-size: 50px;
+    color: #143be8;
+  }
+  
+  .login-form-pc h2 {
+    font-size: 26px;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+
+  .login-form-pc h3{
+    font-size: 14px;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 50px;
+  }
+  
+  .login-form-pc .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .login-form-pc input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  .login-form-pc input:focus {
+    border-color: #143be8;
+  }
+  
+  .login-form-pc .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  
+  .login-form-pc .login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #143be8;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  .login-form-pc .login-button:hover {
+    background-color: #0b2286;
+  }
